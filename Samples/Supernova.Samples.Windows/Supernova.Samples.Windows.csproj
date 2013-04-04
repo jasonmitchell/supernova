@@ -162,6 +162,12 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Src\Supernova.Windows\Supernova.Windows.csproj">
+      <Project>{0e08f548-6ec5-4e61-bc9f-427d0b712f29}</Project>
+      <Name>Supernova.Windows</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
   </PropertyGroup>
