@@ -1,18 +1,36 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supernova", "Supernova\Supernova.csproj", "{D2A76CB5-82CF-4574-80A6-503EF95E176E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supernova.Windows", "Supernova.Windows\Supernova.Windows.csproj", "{0E08F548-6EC5-4E61-BC9F-427D0B712F29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D2A76CB5-82CF-4574-80A6-503EF95E176E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2A76CB5-82CF-4574-80A6-503EF95E176E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2A76CB5-82CF-4574-80A6-503EF95E176E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2A76CB5-82CF-4574-80A6-503EF95E176E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Debug|ARM.ActiveCfg = Debug|ARM
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Debug|ARM.Build.0 = Debug|ARM
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Debug|x64.ActiveCfg = Debug|x64
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Debug|x64.Build.0 = Debug|x64
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Debug|x86.ActiveCfg = Debug|x86
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Debug|x86.Build.0 = Debug|x86
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Release|ARM.ActiveCfg = Release|ARM
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Release|ARM.Build.0 = Release|ARM
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Release|x64.ActiveCfg = Release|x64
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Release|x64.Build.0 = Release|x64
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Release|x86.ActiveCfg = Release|x86
+		{0E08F548-6EC5-4E61-BC9F-427D0B712F29}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
