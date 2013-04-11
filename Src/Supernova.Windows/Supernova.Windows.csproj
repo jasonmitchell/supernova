@@ -9,7 +9,7 @@
     <ProjectGuid>{0E08F548-6EC5-4E61-BC9F-427D0B712F29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Supernova.Windows</RootNamespace>
+    <RootNamespace>Supernova</RootNamespace>
     <AssemblyName>Supernova.Windows</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
@@ -99,8 +99,25 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Particles2D\Modifiers\Alpha\AlphaAgeTransform.cs" />
+    <Compile Include="Particles2D\Modifiers\Alpha\AlphaCycleTransform.cs" />
+    <Compile Include="Particles2D\Modifiers\Color\ColorAgeTransform.cs" />
+    <Compile Include="Particles2D\Modifiers\Color\ColorCycleTransform.cs" />
+    <Compile Include="Particles2D\Modifiers\IModifier.cs" />
+    <Compile Include="Particles2D\Modifiers\Modifier.cs" />
+    <Compile Include="Particles2D\Modifiers\Movement\Friction.cs" />
+    <Compile Include="Particles2D\Modifiers\Movement\Gravity\Blackhole.cs" />
+    <Compile Include="Particles2D\Modifiers\Movement\Gravity\DirectionalPull.cs" />
+    <Compile Include="Particles2D\Modifiers\Movement\Gravity\GravityPoint.cs" />
+    <Compile Include="Particles2D\Modifiers\Movement\RectParticleContainer.cs" />
+    <Compile Include="Particles2D\Modifiers\Scale\ScaleAgeTransform.cs" />
+    <Compile Include="Particles2D\Modifiers\Scale\ScaleCycleTransform.cs" />
     <Compile Include="Particles2D\Particle2D.cs" />
     <Compile Include="Particles2D\ParticleEffect2D.cs" />
+    <Compile Include="Particles2D\ParticleEffect2DFactory.cs" />
+    <Compile Include="Particles2D\Patterns\CircleEmissionPattern.cs" />
+    <Compile Include="Particles2D\Patterns\IEmissionPattern.cs" />
+    <Compile Include="Particles2D\Patterns\RectangleEmissionPattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Supernova.Particles2D;
 using Supernova.Samples.Windows.Utilities;
-using Supernova.Windows.Particles2D;
 
 namespace Supernova.Samples.Windows
 {
@@ -43,7 +43,7 @@ namespace Supernova.Samples.Windows
             Vector2 emitPosition = new Vector2(GraphicsDevice.Viewport.Width / 2f, GraphicsDevice.Viewport.Height / 2f);
             
             particleEffect.Emit((float) gameTime.TotalGameTime.TotalMilliseconds, emitPosition);
-            particleEffect.Update((float) gameTime.TotalGameTime.TotalMilliseconds);
+            particleEffect.Update((float) gameTime.TotalGameTime.TotalMilliseconds, (float) gameTime.ElapsedGameTime.TotalSeconds);
 
             base.Update(gameTime);
         }

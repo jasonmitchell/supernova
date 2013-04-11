@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Supernova.Windows.Particles2D
+namespace Supernova.Particles2D
 {
     public class Particle2D
     {
@@ -9,6 +9,7 @@ namespace Supernova.Windows.Particles2D
         private Vector2 position = Vector2.Zero;
         private Vector2 scale = Vector2.One;
         private Vector2 velocity = Vector2.Zero;
+        private Vector2 projectedPosition = Vector2.Zero;
         private float rotation;
 
         private Texture2D texture;
@@ -35,10 +36,20 @@ namespace Supernova.Windows.Particles2D
 
         internal void Update(double totalMilliseconds)
         {
-            position += velocity;
-
             if (lifespan < (totalMilliseconds - inceptionTime))
+            {
                 isAlive = false;
+            }
+            else
+            {
+                position += velocity;
+                projectedPosition = position + velocity;
+            }
+        }
+
+        internal void Affect(ref Vector2 attraction)
+        {
+            velocity = Vector2.Add(velocity, attraction);
         }
 
         internal void Draw(SpriteBatch spriteBatch)
@@ -50,6 +61,11 @@ namespace Supernova.Windows.Particles2D
         {
             get { return position; }
             set { position = value; }
+        }
+
+        public Vector2 ProjectedPosition
+        {
+            get { return projectedPosition; }
         }
 
         public Vector2 Scale

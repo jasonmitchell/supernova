@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Supernova.Particles2D.Modifiers;
+using Supernova.Particles2D.Patterns;
 
-namespace Supernova.Windows.Particles2D
+namespace Supernova.Particles2D
 {
     public class ParticleEffect2D
     {
         private static readonly Random Random = new Random();
 
+        private readonly List<IModifier> modifiers = new List<IModifier>();
         private readonly List<Texture2D> textures = new List<Texture2D>();
         private readonly Queue<Particle2D> freeParticles = new Queue<Particle2D>();
         private readonly Particle2D[] particles;
+
+        private IEmissionPattern emissionPattern;
 
         private Color particleColor = Color.White;
         private int particleLifespan;
@@ -49,6 +51,11 @@ namespace Supernova.Windows.Particles2D
                     Vector2 emitPosition = position;
                     Texture2D texture = textures[Random.Next(textures.Count)];
 
+                    if (emissionPattern != null)
+                    {
+                        emitPosition = emissionPattern.CalculateParticlePosition(Random, position);
+                    }
+
                     float angle = MathHelper.ToRadians(Random.Next(360));
                     Vector2 velocity = Vector2.Transform(new Vector2((float)Random.NextDouble() * emissionSpeed, 0), Matrix.CreateRotationZ(angle));
 
@@ -60,7 +67,7 @@ namespace Supernova.Windows.Particles2D
             }
         }
 
-        public void Update(double totalMilliseconds)
+        public void Update(float totalMilliseconds, float elapsedSeconds)
         {
             if (IsActive)
             {
@@ -68,6 +75,11 @@ namespace Supernova.Windows.Particles2D
                 {
                     if(particle.IsAlive)
                     {
+                        float particleAge = (totalMilliseconds - particle.InceptionTime) / particle.Lifespan;
+
+                        foreach (IModifier modifier in modifiers)
+                            modifier.Update(particleAge, totalMilliseconds, elapsedSeconds, particle);
+
                         particle.Update(totalMilliseconds);
 
                         if (!particle.IsAlive)
@@ -126,6 +138,17 @@ namespace Supernova.Windows.Particles2D
         {
             get { return particleColor; }
             set { particleColor = value; }
+        }
+
+        public IEmissionPattern EmissionPattern
+        {
+            get { return emissionPattern; }
+            set { emissionPattern = value; }
+        }
+
+        public List<IModifier> Modifiers
+        {
+            get { return modifiers; }
         }
 
         public List<Texture2D> Textures
