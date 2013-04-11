@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Supernova.Particles2D;
+using Supernova.Particles2D.Modifiers.Alpha;
 using Supernova.Samples.Windows.Utilities;
 
 namespace Supernova.Samples.Windows
@@ -27,11 +28,13 @@ namespace Supernova.Samples.Windows
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            particleEffect = new ParticleEffect2D(1000, 2000);
-            particleEffect.Textures.Add(Texture2DFactory.New(GraphicsDevice, 1, 1));
-            particleEffect.Textures.Add(Texture2DFactory.New(GraphicsDevice, 2, 2));
-            particleEffect.EmissionAmount = 75;
-            particleEffect.EmissionSpeed = 2f;
+            particleEffect = ParticleEffect2DFactory.Initialize(1000, 2000)
+                                                    .SetMaxParticleSpeed(2f)
+                                                    .SetEmitAmount(75)
+                                                    .AddTexture(Texture2DFactory.New(GraphicsDevice, 1, 1))
+                                                    .AddTexture(Texture2DFactory.New(GraphicsDevice, 2, 2))
+                                                    .AddModifier(new AlphaAgeTransform())
+                                                    .Create();
         }
 
         protected override void UnloadContent()
