@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Supernova-Particle-System</id>
+        <version>1.0.1</version>
+        <title>Supernova Particle System for MonoGame</title>
+        <authors>Jason Mitchell</authors>
+        <owners>Jason Mitchell</owners>
+        <licenseUrl>https://raw.github.com/jasonmitchell/supernova/34539b95f28092b8ae63a93e93ba57125afd7941/license.txt</licenseUrl>
+        <projectUrl>http://jason-mitchell.com/game-development/supernova-particle-system-for-monogame/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A particle system which is easy to setup and use in games built using MonoGame.</description>
+        <summary />
+        <releaseNotes>Initial release currently targeting Windows 8 and 2D SpriteBatch-based particle effects.</releaseNotes>
+    </metadata>
+    <files>
+        <file src="..\Src\Supernova.Windows\bin\Release\Supernova.Windows.dll" target="lib\Supernova.Windows.dll" />
+        <file src="..\Src\Supernova.Windows\bin\Release\Supernova.Windows.pdb" target="lib\Supernova.Windows.pdb" />
+        <file src="..\Src\Supernova.Windows\bin\Release\Supernova.Windows.pri" target="lib\Supernova.Windows.pri" />
+    </files>
+</package>
