@@ -62,6 +62,9 @@ namespace Supernova.Particles2D
                     Particle2D newParticle = freeParticles.Dequeue();
                     newParticle.Initialize(texture, emitPosition, velocity, particleColor, particleLifespan, totalMilliseconds);
 
+                    foreach (IModifier modifier in modifiers)
+                        modifier.Update(0f, totalMilliseconds, 0, newParticle);
+
                     activeParticleCount++;
                 }
             }
